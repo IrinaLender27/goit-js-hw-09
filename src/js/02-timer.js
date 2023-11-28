@@ -1,8 +1,9 @@
-const flatpickr = require('flatpickr');
+// імпорти
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
-
+// змінні
+const flatpickr = require('flatpickr');
 let timerId = null;
 let selectedDate = null;
 let timeToEnd = 0;
@@ -14,7 +15,7 @@ const refs = {
   minut: document.querySelector('[data-minutes]'),
   second: document.querySelector('[data-seconds]'),
 };
-console.log(refs);
+//
 refs.button.disabled = true;
 const options = {
   enableTime: true,
@@ -26,7 +27,7 @@ const options = {
     currentDate = new Date().getTime();
     if (selectedDate > currentDate) {
       refs.button.disabled = false;
-      Notiflix.Notify.failure('Hello!Click on start');
+      Notiflix.Notify.success('Hello!Click on start');
 
       return;
     }
@@ -34,7 +35,7 @@ const options = {
   },
 };
 flatpickr(refs.date, options);
-
+// події
 refs.button.addEventListener('click', onStart);
 function onStart() {
   intervalId = setInterval(() => {
@@ -43,7 +44,7 @@ function onStart() {
       clearInterval(intervalId);
       refs.button.disabled = true;
       refs.date.disabled = false;
-      Notiflix.Notify.failure('Timer stopped!');
+      Notiflix.Notify.success('Timer stopped!');
       return;
     } else {
       refs.button.disabled = true;
@@ -54,13 +55,14 @@ function onStart() {
     }
   }, 1000);
 }
+// таймер
 function updateClockface({ days, hours, minutes, seconds }) {
   refs.day.textContent = days;
   refs.hour.textContent = hours;
   refs.minut.textContent = minutes;
   refs.second.textContent = seconds;
 }
-
+// форматування значень
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
