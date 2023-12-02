@@ -34,7 +34,7 @@ const options = {
     Notiflix.Notify.failure('Please choose a date in the future');
   },
 };
-flatpickr(refs.date, options);
+const fp = flatpickr(refs.date, options);
 console.log(flatpickr);
 // події
 refs.button.addEventListener('click', onStart);
