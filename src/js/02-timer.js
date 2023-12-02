@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 // змінні
-const flatpickr = require('flatpickr');
+
 let timerId = null;
 let selectedDate = null;
 let timeToEnd = 0;
@@ -34,7 +34,7 @@ const options = {
     Notiflix.Notify.failure('Please choose a date in the future');
   },
 };
-const fp = flatpickr(refs.date, options);
+flatpickr(refs.date, options);
 console.log(flatpickr);
 // події
 refs.button.addEventListener('click', onStart);
