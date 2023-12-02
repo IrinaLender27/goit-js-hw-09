@@ -35,6 +35,7 @@ const options = {
   },
 };
 flatpickr(refs.date, options);
+console.log(flatpickr);
 // події
 refs.button.addEventListener('click', onStart);
 function onStart() {

@@ -3,6 +3,8 @@ console.log(start);
 const stop = document.querySelector('button[data-stop]');
 console.log(stop);
 
+stop.disabled = 'true';
+
 let timerId = null;
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
