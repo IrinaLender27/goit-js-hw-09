@@ -6,9 +6,10 @@ import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 // змінні
 // let flatpickr = require('flatpickr');
-let currentDate = null;
+
 let timerId = null;
 let selectedDate = null;
+let currentDate = null;
 let timeToEnd = 0;
 const refs = {
   date: document.querySelector('#datetime-picker'),
@@ -41,6 +42,7 @@ flatpickr(refs.date, options);
 console.log(flatpickr);
 // події
 refs.button.addEventListener('click', onStart);
+
 function onStart() {
   intervalId = setInterval(() => {
     currentDate = new Date().getTime();
