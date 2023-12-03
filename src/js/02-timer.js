@@ -7,7 +7,7 @@ import Notiflix from 'notiflix';
 // змінні
 // let flatpickr = require('flatpickr');
 
-let timerId = null;
+let intervalId = null;
 let selectedDate = null;
 let currentDate = null;
 let timeToEnd = 0;
