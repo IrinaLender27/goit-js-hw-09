@@ -1,9 +1,12 @@
-// імпорти
+// Описаний в документації
 import flatpickr from 'flatpickr';
+// Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
+
 import Notiflix from 'notiflix';
 // змінні
-
+// let flatpickr = require('flatpickr');
+let currentDate = null;
 let timerId = null;
 let selectedDate = null;
 let timeToEnd = 0;
